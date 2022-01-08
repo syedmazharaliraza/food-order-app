@@ -15,6 +15,10 @@ function Cart(props) {
         cartCtx.removeItem(id);
     };
 
+    const onOrder= ()=>{
+        alert("Ordering...")
+    };
+
     const cartItems =
         <ul className={classes['cart-items']}>{
             cartCtx.items.map(item => {
@@ -31,7 +35,7 @@ function Cart(props) {
             </div>
             <div className={classes.actions}>
                 <button className={classes['button--alt']} onClick={props.onHideCart}>Close</button>
-                {totalAmount > 0 && <button onClick={alert("Ordering...")} className={classes.button}>Order</button>}
+                {totalAmount > 0 && <button onClick={onOrder} className={classes.button}>Order</button>}
             </div>
         </Modal>
     )
